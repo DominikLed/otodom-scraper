@@ -36,7 +36,7 @@
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(0,0,0,.08);
     padding: 32px;
-    max-width: 640px;
+    max-width: 720px;
     width: 100%;
     margin-bottom: 24px;
   }
@@ -49,6 +49,103 @@
     gap: 8px;
   }
 
+  /* ── Listing cards ── */
+  .listing-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    overflow: hidden;
+    display: flex;
+    max-width: 720px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: box-shadow .2s;
+  }
+  .listing-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.13); }
+  .listing-card img {
+    width: 200px;
+    min-height: 160px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #eee;
+  }
+  .listing-card .no-img {
+    width: 200px;
+    min-height: 160px;
+    background: #e8f5ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+  .listing-info {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 6px;
+  }
+  .listing-num {
+    font-size: .75rem;
+    font-weight: 700;
+    color: #009051;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .listing-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+  .listing-title:hover { color: #009051; }
+  .listing-price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #009051;
+    margin-top: 2px;
+  }
+  .listing-meta {
+    font-size: .83rem;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .listing-meta span { display: flex; align-items: center; gap: 3px; }
+  .listing-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 10px;
+    color: #009051;
+    font-size: .85rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .listing-btn:hover { text-decoration: underline; }
+
+  .meta-bar {
+    font-size: .82rem;
+    color: #888;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .meta-dot { color: #ccc; }
+
+  .status-msg {
+    text-align: center;
+    padding: 32px;
+    color: #888;
+    font-size: .95rem;
+  }
+
+  /* ── Install card ── */
   .install-btn {
     display: block;
     width: 100%;
@@ -67,12 +164,7 @@
   .install-btn:hover  { background: #007540; transform: translateY(-1px); }
   .install-btn:active { transform: translateY(0); }
 
-  .note {
-    font-size: .82rem;
-    color: #888;
-    text-align: center;
-    margin-top: 8px;
-  }
+  .note { font-size: .82rem; color: #888; text-align: center; margin-top: 8px; }
 
   ol, ul { padding-left: 20px; }
   li { margin-bottom: 10px; line-height: 1.6; color: #333; }
@@ -99,50 +191,19 @@
     margin: 4px 4px 0 0;
   }
 
-  .criteria {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 12px 0;
-  }
-
-  .divider {
-    border: none;
-    border-top: 1px solid #eee;
-    margin: 20px 0;
-  }
-
-  .files {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 14px 18px;
-    font-size: .88rem;
-    color: #444;
-  }
-  .files .file {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-  .files .file:last-child { margin-bottom: 0; }
-  .files .ext {
-    background: #009051;
-    color: #fff;
-    border-radius: 4px;
-    padding: 1px 7px;
-    font-size: .75rem;
-    font-weight: 700;
-    min-width: 40px;
-    text-align: center;
-  }
-  .files .ext.html { background: #e67e22; }
+  .criteria { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .divider { border: none; border-top: 1px solid #eee; margin: 20px 0; }
 
   footer {
     color: #aaa;
     font-size: .8rem;
     margin-top: 16px;
     text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .listing-card { flex-direction: column; }
+    .listing-card img, .listing-card .no-img { width: 100%; min-height: 180px; }
   }
 </style>
 </head>
@@ -154,9 +215,18 @@
   <p class="subtitle">Automatyczne pobieranie ogłoszeń z otodom.pl</p>
 </div>
 
+<!-- Sekcja ogłoszeń -->
+<div class="card">
+  <h2>🏘️ Aktualne ogłoszenia – kawalerki / wynajem / Wrocław</h2>
+  <div id="meta-bar" class="meta-bar"></div>
+  <div id="listings-container">
+    <div class="status-msg">⏳ Ładowanie ogłoszeń…</div>
+  </div>
+</div>
+
 <!-- Karta instalacji -->
 <div class="card">
-  <h2>⚡ Instalacja skryptu</h2>
+  <h2>⚡ Instalacja skryptu Tampermonkey</h2>
 
   <a class="install-btn" href="/otodom-kawalerki-wroclaw.user.js">
     📥 Zainstaluj w Tampermonkey
@@ -172,70 +242,89 @@
     <span class="badge">🛏 Kawalerka</span>
     <span class="badge">🔑 Wynajem</span>
     <span class="badge">📍 Wrocław</span>
-    <span class="badge">📋 5 ogłoszeń</span>
+    <span class="badge">📋 10 ogłoszeń</span>
   </div>
 </div>
 
 <!-- Karta użycia -->
 <div class="card">
-  <h2>📖 Jak używać</h2>
+  <h2>📖 Jak to działa</h2>
   <ol>
-    <li>
-      Upewnij się że masz zainstalowany <strong>Tampermonkey</strong> w Chrome/Edge/Firefox
-    </li>
-    <li>
-      Kliknij przycisk <strong>„Zainstaluj w Tampermonkey"</strong> powyżej i zatwierdź instalację
-    </li>
-    <li>
-      Wejdź na <a href="https://www.otodom.pl" target="_blank" style="color:#009051">otodom.pl</a> i zaloguj się
-    </li>
-    <li>
-      W prawym dolnym rogu pojawi się zielony przycisk <strong>„📥 Pobierz 5 ogłoszeń"</strong>
-    </li>
-    <li>
-      Kliknij go – przy pierwszym uruchomieniu wybierz folder docelowy (np. ten katalog)
-    </li>
-    <li>
-      Skrypt automatycznie przechodzi na stronę wyników i zapisuje pliki wynikowe
-    </li>
+    <li>GitHub Actions automatycznie scrapuje otodom.pl <strong>raz dziennie o 8:00</strong></li>
+    <li>Wyniki są zapisywane do repozytorium jako plik JSON</li>
+    <li>Vercel automatycznie odświeża tę stronę z nowymi danymi</li>
+    <li>Strona jest dostępna publicznie – każdy może zobaczyć aktualne ogłoszenia</li>
   </ol>
 </div>
 
-<!-- Karta wyników -->
-<div class="card">
-  <h2>💾 Pliki wynikowe</h2>
-  <p style="font-size:.9rem;color:#555;margin-bottom:14px;">
-    Po uruchomieniu skrypt zapisuje dwa pliki w wybranym folderze:
-  </p>
-  <div class="files">
-    <div class="file">
-      <span class="ext">JSON</span>
-      <span><code>otodom_kawalerki_wroclaw_YYYY-MM-DD.json</code> – dane strukturalne (tytuł, cena, adres, zdjęcia, URL)</span>
-    </div>
-    <div class="file">
-      <span class="ext html">HTML</span>
-      <span><code>otodom_kawalerki_wroclaw_YYYY-MM-DD.html</code> – wizualny raport z miniaturami do otwarcia w przeglądarce</span>
-    </div>
-  </div>
-</div>
-
-<!-- Karta pliku skryptu -->
-<div class="card">
-  <h2>🔧 Plik skryptu</h2>
-  <p style="font-size:.9rem;color:#555;margin-bottom:12px;">
-    Bezpośrednie linki do plików projektu:
-  </p>
-  <div class="files">
-    <div class="file">
-      <span class="ext" style="background:#555">JS</span>
-      <a href="/otodom-kawalerki-wroclaw.user.js" style="color:#009051;font-size:.88rem">otodom-kawalerki-wroclaw.user.js</a>
-    </div>
-  </div>
-</div>
-
 <footer>
-  Projekt lokalny · <code>http://localhost:8080</code> · Tampermonkey Userscript
+  Automatyczne odświeżanie · GitHub Actions + Vercel · otodom.pl Wrocław
 </footer>
+
+<script>
+  function escHtml(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function formatDate(iso) {
+    if (!iso) return 'brak danych';
+    try {
+      return new Date(iso).toLocaleString('pl-PL', {
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Warsaw'
+      });
+    } catch { return iso; }
+  }
+
+  function renderListings(data) {
+    const container = document.getElementById('listings-container');
+    const metaBar   = document.getElementById('meta-bar');
+
+    if (!data.ogloszenia || data.ogloszenia.length === 0) {
+      container.innerHTML = '<div class="status-msg">Brak ogłoszeń – pierwsze dane pojawią się jutro po automatycznym scrapingu.</div>';
+      return;
+    }
+
+    metaBar.innerHTML = `
+      <span>📅 Aktualizacja: <strong>${formatDate(data.data_pobrania)}</strong></span>
+      <span class="meta-dot">·</span>
+      <span>Znaleziono: <strong>${data.liczba_ogloszen} ogłoszeń</strong></span>
+    `;
+
+    container.innerHTML = data.ogloszenia.map(o => `
+      <div class="listing-card">
+        ${o.miniatura
+          ? `<img src="${escHtml(o.miniatura)}" alt="zdjęcie" loading="lazy">`
+          : `<div class="no-img">🏠</div>`}
+        <div class="listing-info">
+          <span class="listing-num">#${o.numer}</span>
+          <a class="listing-title" href="${escHtml(o.url)}" target="_blank" rel="noopener">
+            ${escHtml(o.tytul)}
+          </a>
+          <div class="listing-price">💰 ${escHtml(o.cena)}</div>
+          <div class="listing-meta">
+            ${o.powierzchnia ? `<span>📐 ${escHtml(o.powierzchnia)}</span>` : ''}
+            ${o.cena_za_m2   ? `<span>📊 ${escHtml(o.cena_za_m2)}</span>`   : ''}
+            ${o.adres        ? `<span>📍 ${escHtml(o.adres)}</span>`         : ''}
+          </div>
+          <a class="listing-btn" href="${escHtml(o.url)}" target="_blank" rel="noopener">
+            Zobacz ogłoszenie →
+          </a>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  fetch('/data/listings.json')
+    .then(r => r.json())
+    .then(renderListings)
+    .catch(() => {
+      document.getElementById('listings-container').innerHTML =
+        '<div class="status-msg">❌ Nie udało się załadować ogłoszeń. Spróbuj odświeżyć stronę.</div>';
+    });
+</script>
 
 </body>
 </html>
