@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Otodom Scraper – kawalerki / wynajem / Wrocław</title>
+<title>Kawalerki Wrocław – wynajem</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -12,317 +12,197 @@
     background: #f0f4f2;
     color: #1a1a1a;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 48px 16px;
+    padding: 32px 16px 48px;
+    max-width: 780px;
+    margin: 0 auto;
   }
 
-  .hero {
+  header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
-  .logo { font-size: 56px; margin-bottom: 12px; }
-  h1 {
-    font-size: 2rem;
+  header h1 {
+    font-size: 1.8rem;
     font-weight: 800;
     color: #009051;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
-  .subtitle { color: #555; font-size: 1.05rem; }
+  header p {
+    color: #666;
+    font-size: .9rem;
+  }
 
-  .card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,.08);
-    padding: 32px;
-    max-width: 720px;
-    width: 100%;
-    margin-bottom: 24px;
-  }
-  .card h2 {
-    font-size: 1.1rem;
-    color: #009051;
-    margin-bottom: 16px;
+  .meta {
+    font-size: .82rem;
+    color: #888;
+    margin-bottom: 20px;
     display: flex;
-    align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
   }
+  .meta strong { color: #444; }
+  .dot { color: #ccc; }
 
-  /* ── Listing cards ── */
-  .listing-card {
+  .listing {
     background: #fff;
     border-radius: 14px;
     box-shadow: 0 2px 12px rgba(0,0,0,.08);
     overflow: hidden;
     display: flex;
-    max-width: 720px;
-    width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     transition: box-shadow .2s;
+    text-decoration: none;
+    color: inherit;
   }
-  .listing-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.13); }
-  .listing-card img {
-    width: 200px;
-    min-height: 160px;
+  .listing:hover { box-shadow: 0 6px 24px rgba(0,0,0,.14); }
+
+  .listing img {
+    width: 210px;
+    min-height: 155px;
     object-fit: cover;
     flex-shrink: 0;
-    background: #eee;
+    background: #e8f5ee;
   }
-  .listing-card .no-img {
-    width: 200px;
-    min-height: 160px;
+  .no-photo {
+    width: 210px;
+    min-height: 155px;
     background: #e8f5ee;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     flex-shrink: 0;
   }
-  .listing-info {
-    padding: 18px 20px;
+
+  .info {
+    padding: 16px 20px;
     display: flex;
     flex-direction: column;
+    gap: 5px;
     flex: 1;
-    gap: 6px;
   }
-  .listing-num {
-    font-size: .75rem;
+  .num {
+    font-size: .72rem;
     font-weight: 700;
     color: #009051;
     text-transform: uppercase;
-    letter-spacing: .5px;
+    letter-spacing: .4px;
   }
-  .listing-title {
-    font-size: 1rem;
+  .title {
+    font-size: .98rem;
     font-weight: 700;
-    color: #1a1a1a;
     line-height: 1.35;
-    text-decoration: none;
+    color: #1a1a1a;
   }
-  .listing-title:hover { color: #009051; }
-  .listing-price {
+  .price {
     font-size: 1.2rem;
     font-weight: 800;
     color: #009051;
     margin-top: 2px;
   }
-  .listing-meta {
-    font-size: .83rem;
+  .details {
+    font-size: .82rem;
     color: #666;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 2px;
   }
-  .listing-meta span { display: flex; align-items: center; gap: 3px; }
-  .listing-btn {
+  .see-btn {
     display: inline-block;
     margin-top: auto;
-    padding-top: 10px;
-    color: #009051;
-    font-size: .85rem;
+    padding-top: 8px;
+    font-size: .83rem;
     font-weight: 600;
-    text-decoration: none;
+    color: #009051;
   }
-  .listing-btn:hover { text-decoration: underline; }
 
-  .meta-bar {
-    font-size: .82rem;
-    color: #888;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .meta-dot { color: #ccc; }
-
-  .status-msg {
+  .empty {
     text-align: center;
-    padding: 32px;
-    color: #888;
+    padding: 60px 20px;
+    color: #999;
     font-size: .95rem;
   }
 
-  /* ── Install card ── */
-  .install-btn {
-    display: block;
-    width: 100%;
-    background: #009051;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    padding: 16px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: .3px;
-    transition: background .2s, transform .1s;
-    margin-bottom: 12px;
-  }
-  .install-btn:hover  { background: #007540; transform: translateY(-1px); }
-  .install-btn:active { transform: translateY(0); }
-
-  .note { font-size: .82rem; color: #888; text-align: center; margin-top: 8px; }
-
-  ol, ul { padding-left: 20px; }
-  li { margin-bottom: 10px; line-height: 1.6; color: #333; }
-  li strong { color: #009051; }
-
-  code {
-    background: #f0f0f0;
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-size: .88em;
-    color: #c0392b;
-  }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: #e8f5ee;
-    color: #009051;
-    border-radius: 20px;
-    padding: 4px 12px;
-    font-size: .8rem;
-    font-weight: 600;
-    margin: 4px 4px 0 0;
-  }
-
-  .criteria { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
-  .divider { border: none; border-top: 1px solid #eee; margin: 20px 0; }
-
   footer {
-    color: #aaa;
-    font-size: .8rem;
-    margin-top: 16px;
     text-align: center;
+    font-size: .78rem;
+    color: #bbb;
+    margin-top: 24px;
   }
 
-  @media (max-width: 600px) {
-    .listing-card { flex-direction: column; }
-    .listing-card img, .listing-card .no-img { width: 100%; min-height: 180px; }
+  @media (max-width: 560px) {
+    .listing { flex-direction: column; }
+    .listing img, .no-photo { width: 100%; min-height: 180px; }
   }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="logo">🏠</div>
-  <h1>Otodom Scraper</h1>
-  <p class="subtitle">Automatyczne pobieranie ogłoszeń z otodom.pl</p>
-</div>
+<header>
+  <h1>🏠 Kawalerki Wrocław – wynajem</h1>
+  <p>Automatycznie pobierane z otodom.pl · odświeżane codziennie</p>
+</header>
 
-<!-- Sekcja ogłoszeń -->
-<div class="card">
-  <h2>🏘️ Aktualne ogłoszenia – kawalerki / wynajem / Wrocław</h2>
-  <div id="meta-bar" class="meta-bar"></div>
-  <div id="listings-container">
-    <div class="status-msg">⏳ Ładowanie ogłoszeń…</div>
-  </div>
-</div>
+<div id="meta" class="meta"></div>
+<div id="listings"></div>
 
-<!-- Karta instalacji -->
-<div class="card">
-  <h2>⚡ Instalacja skryptu Tampermonkey</h2>
-
-  <a class="install-btn" href="/otodom-kawalerki-wroclaw.user.js">
-    📥 Zainstaluj w Tampermonkey
-  </a>
-  <p class="note">Kliknij – Tampermonkey automatycznie wykryje skrypt i zaproponuje instalację</p>
-
-  <hr class="divider">
-
-  <p style="font-size:.9rem;color:#555;margin-bottom:10px;">
-    Skrypt pobiera ogłoszenia według kryteriów:
-  </p>
-  <div class="criteria">
-    <span class="badge">🛏 Kawalerka</span>
-    <span class="badge">🔑 Wynajem</span>
-    <span class="badge">📍 Wrocław</span>
-    <span class="badge">📋 10 ogłoszeń</span>
-  </div>
-</div>
-
-<!-- Karta użycia -->
-<div class="card">
-  <h2>📖 Jak to działa</h2>
-  <ol>
-    <li>GitHub Actions automatycznie scrapuje otodom.pl <strong>raz dziennie o 8:00</strong></li>
-    <li>Wyniki są zapisywane do repozytorium jako plik JSON</li>
-    <li>Vercel automatycznie odświeża tę stronę z nowymi danymi</li>
-    <li>Strona jest dostępna publicznie – każdy może zobaczyć aktualne ogłoszenia</li>
-  </ol>
-</div>
-
-<footer>
-  Automatyczne odświeżanie · GitHub Actions + Vercel · otodom.pl Wrocław
-</footer>
+<footer>otodom-scraper · GitHub Actions + Vercel</footer>
 
 <script>
-  function escHtml(s) {
-    return String(s || '')
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  function formatDate(iso) {
-    if (!iso) return 'brak danych';
+  function fmtDate(iso) {
+    if (!iso) return '—';
     try {
       return new Date(iso).toLocaleString('pl-PL', {
-        day: '2-digit', month: '2-digit', year: 'numeric',
-        hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Warsaw'
+        day:'2-digit', month:'2-digit', year:'numeric',
+        hour:'2-digit', minute:'2-digit', timeZone:'Europe/Warsaw'
       });
     } catch { return iso; }
   }
 
-  function renderListings(data) {
-    const container = document.getElementById('listings-container');
-    const metaBar   = document.getElementById('meta-bar');
-
-    if (!data.ogloszenia || data.ogloszenia.length === 0) {
-      container.innerHTML = '<div class="status-msg">Brak ogłoszeń – pierwsze dane pojawią się jutro po automatycznym scrapingu.</div>';
-      return;
-    }
-
-    metaBar.innerHTML = `
-      <span>📅 Aktualizacja: <strong>${formatDate(data.data_pobrania)}</strong></span>
-      <span class="meta-dot">·</span>
-      <span>Znaleziono: <strong>${data.liczba_ogloszen} ogłoszeń</strong></span>
-    `;
-
-    container.innerHTML = data.ogloszenia.map(o => `
-      <div class="listing-card">
-        ${o.miniatura
-          ? `<img src="${escHtml(o.miniatura)}" alt="zdjęcie" loading="lazy">`
-          : `<div class="no-img">🏠</div>`}
-        <div class="listing-info">
-          <span class="listing-num">#${o.numer}</span>
-          <a class="listing-title" href="${escHtml(o.url)}" target="_blank" rel="noopener">
-            ${escHtml(o.tytul)}
-          </a>
-          <div class="listing-price">💰 ${escHtml(o.cena)}</div>
-          <div class="listing-meta">
-            ${o.powierzchnia ? `<span>📐 ${escHtml(o.powierzchnia)}</span>` : ''}
-            ${o.cena_za_m2   ? `<span>📊 ${escHtml(o.cena_za_m2)}</span>`   : ''}
-            ${o.adres        ? `<span>📍 ${escHtml(o.adres)}</span>`         : ''}
-          </div>
-          <a class="listing-btn" href="${escHtml(o.url)}" target="_blank" rel="noopener">
-            Zobacz ogłoszenie →
-          </a>
-        </div>
-      </div>
-    `).join('');
-  }
-
   fetch('/data/listings.json')
     .then(r => r.json())
-    .then(renderListings)
+    .then(data => {
+      const list = data.ogloszenia || [];
+
+      document.getElementById('meta').innerHTML =
+        `<span>📅 Aktualizacja: <strong>${fmtDate(data.data_pobrania)}</strong></span>` +
+        `<span class="dot">·</span>` +
+        `<span>Ogłoszeń: <strong>${list.length}</strong></span>`;
+
+      if (!list.length) {
+        document.getElementById('listings').innerHTML =
+          '<div class="empty">Brak ogłoszeń – dane pojawią się po pierwszym automatycznym scrapingu.</div>';
+        return;
+      }
+
+      document.getElementById('listings').innerHTML = list.map(o => `
+        <a class="listing" href="${esc(o.url)}" target="_blank" rel="noopener">
+          ${o.miniatura
+            ? `<img src="${esc(o.miniatura)}" alt="" loading="lazy">`
+            : `<div class="no-photo">🏠</div>`}
+          <div class="info">
+            <span class="num">#${o.numer}</span>
+            <div class="title">${esc(o.tytul)}</div>
+            <div class="price">💰 ${esc(o.cena)}</div>
+            <div class="details">
+              ${o.powierzchnia ? `<span>📐 ${esc(o.powierzchnia)}</span>` : ''}
+              ${o.cena_za_m2   ? `<span>📊 ${esc(o.cena_za_m2)}</span>`   : ''}
+              ${o.adres        ? `<span>📍 ${esc(o.adres)}</span>`         : ''}
+            </div>
+            <span class="see-btn">Zobacz ogłoszenie →</span>
+          </div>
+        </a>
+      `).join('');
+    })
     .catch(() => {
-      document.getElementById('listings-container').innerHTML =
-        '<div class="status-msg">❌ Nie udało się załadować ogłoszeń. Spróbuj odświeżyć stronę.</div>';
+      document.getElementById('listings').innerHTML =
+        '<div class="empty">❌ Nie udało się załadować danych.</div>';
     });
 </script>
 

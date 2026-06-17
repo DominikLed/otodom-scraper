@@ -1,6 +1,111 @@
 {
-  "data_pobrania": null,
-  "kryteria": { "typ": "kawalerka", "transakcja": "wynajem", "miasto": "Wrocław" },
-  "liczba_ogloszen": 0,
-  "ogloszenia": []
+  "data_pobrania": "2026-06-17T17:42:55.312Z",
+  "kryteria": {
+    "typ": "kawalerka",
+    "transakcja": "wynajem",
+    "miasto": "Wrocław"
+  },
+  "liczba_ogloszen": 5,
+  "ogloszenia": [
+    {
+      "numer": 1,
+      "id": 68118519,
+      "tytul": "Komfortowa kawalerka 31 m² z dużym tarasem | Krzyki | ul. Racławicka",
+      "cena": "2100 PLN",
+      "cena_za_m2": "68 PLN/m²",
+      "powierzchnia": "31 m²",
+      "pokoje": "ONE",
+      "adres": "ul. Racławicka, Wrocław",
+      "dzielnica": "",
+      "url": "https://www.otodom.pl/pl/oferta/komfortowa-kawalerka-31-m-z-duzym-tarasem-krzyki-ul-raclawicka-ID4BOJN",
+      "zdjecia": [
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Ijhra2xkZG1kZnd1ZjItQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.EIul-creJGhYK_5UZ6oVpOoI0AELup31Ywfx4ROW6xI/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjZtNGt4ZDVyOW1laTItQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.AnKKWjbl8EWYY78yq3WSGn0hfd9bcbC1_hQ5G5vObs8/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImluZmIyNW45eGgybTMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.4qZU_Ji_WokBW3yEGVnzSfZTdNkkjhUCeROET5Ms_kg/image;s=1280x1024;q=80"
+      ],
+      "miniatura": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Ijhra2xkZG1kZnd1ZjItQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.EIul-creJGhYK_5UZ6oVpOoI0AELup31Ywfx4ROW6xI/image;s=1280x1024;q=80",
+      "wystawione_przez": "Właściciel prywatny",
+      "data_dodania": "2026-06-17 18:47:48"
+    },
+    {
+      "numer": 2,
+      "id": 68118457,
+      "tytul": "KAWALERKA LUX 25m2",
+      "cena": "2500 PLN",
+      "cena_za_m2": "100 PLN/m²",
+      "powierzchnia": "25 m²",
+      "pokoje": "ONE",
+      "adres": "ul. Tadeusza Kościuszki, Wrocław",
+      "dzielnica": "",
+      "url": "https://www.otodom.pl/pl/oferta/kawalerka-lux-25m2-ID4BOIN",
+      "zdjecia": [
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVqczMwY3lxeGlobDMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.aVNhxRD-0hjpKiqva9V1JK2fGOe-Tk54FlMpDrWv6iw/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImZsa3VsZGhzaDZwdS1BUEwiLCJ3IjpbeyJmbiI6ImVudmZxcWUxYXk0azEtQVBMIiwicyI6IjE0IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.1gSfBlFsKGaKDgvRq-gdAWQAAs-gFth-DYxXBejeX9E/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InZjeDdrNzl1NWF5NjEtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.rAuVS0e8uJE3mywOEAIbOOw4nQVS7mp3P1QCmuR5enI/image;s=1280x1024;q=80"
+      ],
+      "miniatura": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVqczMwY3lxeGlobDMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.aVNhxRD-0hjpKiqva9V1JK2fGOe-Tk54FlMpDrWv6iw/image;s=1280x1024;q=80",
+      "wystawione_przez": "Właściciel prywatny",
+      "data_dodania": "2026-06-17 18:01:02"
+    },
+    {
+      "numer": 3,
+      "id": 68093853,
+      "tytul": "Bezpośrednio I Niska kaucja I Przyjazne zwierzętom I Najem od 6 m-cy",
+      "cena": "2420 PLN",
+      "cena_za_m2": "71 PLN/m²",
+      "powierzchnia": "34 m²",
+      "pokoje": "ONE",
+      "adres": "ul. Dąbrowskiego 40, Wrocław",
+      "dzielnica": "",
+      "url": "https://www.otodom.pl/pl/oferta/bezposrednio-i-niska-kaucja-i-przyjazne-zwierzetom-i-najem-od-6-m-cy-ID4BIjX",
+      "zdjecia": [
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImRzMmM0eHNnMjVibDMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.kW20VZ8UmGOMxJ3PDzVj0AurclA5sRd4qyqjmh0Boyc/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Imt2cW5iNzJ4cW5peS1BUEwiLCJ3IjpbeyJmbiI6ImVudmZxcWUxYXk0azEtQVBMIiwicyI6IjE0IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.H1LB4b1ELi_czg8OaAwn-hVlzFb0zEOMRQ7JfrI5Y1w/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InB5b210dXU5bnJlZDMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.yVvjBCVa1W3cJG_DSKJlHyiCUwkSmmyyKwzoUsvBuro/image;s=1280x1024;q=80"
+      ],
+      "miniatura": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImRzMmM0eHNnMjVibDMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.kW20VZ8UmGOMxJ3PDzVj0AurclA5sRd4qyqjmh0Boyc/image;s=1280x1024;q=80",
+      "wystawione_przez": "naj m®",
+      "data_dodania": "2026-06-17 18:00:37"
+    },
+    {
+      "numer": 4,
+      "id": 68118401,
+      "tytul": "Mieszkanie 1-pokojowe na Brochowie, do zamieszkania",
+      "cena": "2000 PLN",
+      "cena_za_m2": "74 PLN/m²",
+      "powierzchnia": "27 m²",
+      "pokoje": "ONE",
+      "adres": "ul. Koreańska, Wrocław",
+      "dzielnica": "",
+      "url": "https://www.otodom.pl/pl/oferta/mieszkanie-1-pokojowe-na-brochowie-do-zamieszkania-ID4BOHT",
+      "zdjecia": [
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImVxbW56NWM1cnlpNjMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.Zv0ngqdE7qdfT6_hAJJKSBf86eBZO8nE8JPZ2WmPtco/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InJzZWQ2em82eDM0ZS1BUEwiLCJ3IjpbeyJmbiI6ImVudmZxcWUxYXk0azEtQVBMIiwicyI6IjE0IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.YRGGQskLSMIAjeYv-j5VsH5vUa-jQekCLlNRH0x7_zo/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVqOGVnNWUyaXB6Zy1BUEwiLCJ3IjpbeyJmbiI6ImVudmZxcWUxYXk0azEtQVBMIiwicyI6IjE0IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.KRUCKY7RG-5SiScAV3zR1olNub1cd_-4vA176bPwLG0/image;s=1280x1024;q=80"
+      ],
+      "miniatura": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImVxbW56NWM1cnlpNjMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.Zv0ngqdE7qdfT6_hAJJKSBf86eBZO8nE8JPZ2WmPtco/image;s=1280x1024;q=80",
+      "wystawione_przez": "Właściciel prywatny",
+      "data_dodania": "2026-06-17 17:41:34"
+    },
+    {
+      "numer": 5,
+      "id": 67762408,
+      "tytul": "Nowoczesne 20m² mieszkanie z windą Psie Pole",
+      "cena": "1950 PLN",
+      "cena_za_m2": "98 PLN/m²",
+      "powierzchnia": "20 m²",
+      "pokoje": "ONE",
+      "adres": "Działoszyńska, Wrocław",
+      "dzielnica": "",
+      "url": "https://www.otodom.pl/pl/oferta/nowoczesne-20m-mieszkanie-z-winda-psie-pole-ID4Ak64",
+      "zdjecia": [
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImIyYm56ODk5eXZhdTMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.MvYe64S4WSG5_eqAAcGZCiXdKf5V2q6jYmnvJplXpGw/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjFsMW9heHg2ZXdmdTMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.1n5C47Mh73t_1_t5mWJxY9-vIA8cvxKWdG3zhPPBZS4/image;s=1280x1024;q=80",
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImViNnM5c2ZkYXQybTEtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.5CSOY2nQ_1l3LRllmjknrQ0wtnDqHv_3U0EiV5-33cA/image;s=1280x1024;q=80"
+      ],
+      "miniatura": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImIyYm56ODk5eXZhdTMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNCIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.MvYe64S4WSG5_eqAAcGZCiXdKf5V2q6jYmnvJplXpGw/image;s=1280x1024;q=80",
+      "wystawione_przez": "Właściciel prywatny",
+      "data_dodania": "2026-06-17 16:30:23"
+    }
+  ]
 }
