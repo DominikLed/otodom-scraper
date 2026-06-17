@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otodom Scraper – kawalerki / wynajem / Wrocław</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f0f4f2;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 16px;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .logo { font-size: 56px; margin-bottom: 12px; }
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #009051;
+    margin-bottom: 8px;
+  }
+  .subtitle { color: #555; font-size: 1.05rem; }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.08);
+    padding: 32px;
+    max-width: 640px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+    color: #009051;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .install-btn {
+    display: block;
+    width: 100%;
+    background: #009051;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+    transition: background .2s, transform .1s;
+    margin-bottom: 12px;
+  }
+  .install-btn:hover  { background: #007540; transform: translateY(-1px); }
+  .install-btn:active { transform: translateY(0); }
+
+  .note {
+    font-size: .82rem;
+    color: #888;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  ol, ul { padding-left: 20px; }
+  li { margin-bottom: 10px; line-height: 1.6; color: #333; }
+  li strong { color: #009051; }
+
+  code {
+    background: #f0f0f0;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: .88em;
+    color: #c0392b;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #e8f5ee;
+    color: #009051;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: .8rem;
+    font-weight: 600;
+    margin: 4px 4px 0 0;
+  }
+
+  .criteria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  }
+
+  .files {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: .88rem;
+    color: #444;
+  }
+  .files .file {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .files .file:last-child { margin-bottom: 0; }
+  .files .ext {
+    background: #009051;
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-size: .75rem;
+    font-weight: 700;
+    min-width: 40px;
+    text-align: center;
+  }
+  .files .ext.html { background: #e67e22; }
+
+  footer {
+    color: #aaa;
+    font-size: .8rem;
+    margin-top: 16px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo">🏠</div>
+  <h1>Otodom Scraper</h1>
+  <p class="subtitle">Automatyczne pobieranie ogłoszeń z otodom.pl</p>
+</div>
+
+<!-- Karta instalacji -->
+<div class="card">
+  <h2>⚡ Instalacja skryptu</h2>
+
+  <a class="install-btn" href="/otodom-kawalerki-wroclaw.user.js">
+    📥 Zainstaluj w Tampermonkey
+  </a>
+  <p class="note">Kliknij – Tampermonkey automatycznie wykryje skrypt i zaproponuje instalację</p>
+
+  <hr class="divider">
+
+  <p style="font-size:.9rem;color:#555;margin-bottom:10px;">
+    Skrypt pobiera ogłoszenia według kryteriów:
+  </p>
+  <div class="criteria">
+    <span class="badge">🛏 Kawalerka</span>
+    <span class="badge">🔑 Wynajem</span>
+    <span class="badge">📍 Wrocław</span>
+    <span class="badge">📋 5 ogłoszeń</span>
+  </div>
+</div>
+
+<!-- Karta użycia -->
+<div class="card">
+  <h2>📖 Jak używać</h2>
+  <ol>
+    <li>
+      Upewnij się że masz zainstalowany <strong>Tampermonkey</strong> w Chrome/Edge/Firefox
+    </li>
+    <li>
+      Kliknij przycisk <strong>„Zainstaluj w Tampermonkey"</strong> powyżej i zatwierdź instalację
+    </li>
+    <li>
+      Wejdź na <a href="https://www.otodom.pl" target="_blank" style="color:#009051">otodom.pl</a> i zaloguj się
+    </li>
+    <li>
+      W prawym dolnym rogu pojawi się zielony przycisk <strong>„📥 Pobierz 5 ogłoszeń"</strong>
+    </li>
+    <li>
+      Kliknij go – przy pierwszym uruchomieniu wybierz folder docelowy (np. ten katalog)
+    </li>
+    <li>
+      Skrypt automatycznie przechodzi na stronę wyników i zapisuje pliki wynikowe
+    </li>
+  </ol>
+</div>
+
+<!-- Karta wyników -->
+<div class="card">
+  <h2>💾 Pliki wynikowe</h2>
+  <p style="font-size:.9rem;color:#555;margin-bottom:14px;">
+    Po uruchomieniu skrypt zapisuje dwa pliki w wybranym folderze:
+  </p>
+  <div class="files">
+    <div class="file">
+      <span class="ext">JSON</span>
+      <span><code>otodom_kawalerki_wroclaw_YYYY-MM-DD.json</code> – dane strukturalne (tytuł, cena, adres, zdjęcia, URL)</span>
+    </div>
+    <div class="file">
+      <span class="ext html">HTML</span>
+      <span><code>otodom_kawalerki_wroclaw_YYYY-MM-DD.html</code> – wizualny raport z miniaturami do otwarcia w przeglądarce</span>
+    </div>
+  </div>
+</div>
+
+<!-- Karta pliku skryptu -->
+<div class="card">
+  <h2>🔧 Plik skryptu</h2>
+  <p style="font-size:.9rem;color:#555;margin-bottom:12px;">
+    Bezpośrednie linki do plików projektu:
+  </p>
+  <div class="files">
+    <div class="file">
+      <span class="ext" style="background:#555">JS</span>
+      <a href="/otodom-kawalerki-wroclaw.user.js" style="color:#009051;font-size:.88rem">otodom-kawalerki-wroclaw.user.js</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Projekt lokalny · <code>http://localhost:8080</code> · Tampermonkey Userscript
+</footer>
+
+</body>
+</html>

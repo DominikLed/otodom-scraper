@@ -1,0 +1,11 @@
+
+tampermonkey
+
+
+generował skrypt do tampermonkey
+skrypt się odpala na otodom.pl
+wybiera nam dowolne kryteria (kawalerki, na wynajem we Wrocławiu)
+i pobiera 5 ogłoszeń i zapisuje na dysku
+
+
+3yj.ZZ9_8BtQ&9S
